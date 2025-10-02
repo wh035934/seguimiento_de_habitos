@@ -1,0 +1,219 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6fb;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #4f8cff;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+/* Sección del formulario */
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+
+#habit-Input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #bfc8e2;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 250px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+#habit-Input:focus {
+  border-color: #4f8cff;
+}
+
+#addHabitBtn {
+  padding: 0.7rem 1.2rem;
+  background: #4f8cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#addHabitBtn:hover {
+  background: #3570e6;
+}
+
+/* Lista de hábitos */
+.habit-list-section {
+  display: flex;
+  justify-content: center;
+}
+
+#habitList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 350px;
+}
+
+#habitList li {
+  background: #fff;
+  margin-bottom: 0.7rem;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+#habitList li.completed {
+  background: #d1e7dd;
+  text-decoration: line-through;
+  color: #4f8cff;
+}
+
+.delete-btn {
+  background: #ff4f4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #d13c3c;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.2rem 0;
+  background: #e9efff;
+  color: #333;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+}
+
+/* Animación al completar */
+#habitList li.completed {
+  animation: completedAnim 0.4s;
+}
+
+@keyframes completedAnim {
+  0% { background: #fff; color: #4f8cff; }
+  100% { background: #d1e7dd; color: #4f8cff; }
+}
+
+/* Animación al eliminar */
+#habitList li.removing {
+  animation: removeAnim 0.3s forwards;
+}
+
+@keyframes removeAnim {
+  to { opacity: 0; transform: translateX(50px); }
+}
+
+/* Hover en los ítems */
+#habitList li:hover {
+  box-shadow: 0 4px 12px rgba(79,140,255,0.12);
+  background: #f0f6ff;
+}
+
+/* Mejor contraste en el título */
+header h1 {
+  color: #fff;
+  text-shadow: 1px 2px 8px rgba(44,62,80,0.18);
+}
+
+/* Estilos para modo oscuro */
+
+#toggleDarkMode {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    outline: none;
+    color: inherit;
+    font-size: 1.3rem; /* Ajusta el tamaño del ícono si lo deseas */
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+body.dark-mode {
+  background: #23272f;
+  color: #e9efff;
+}
+
+body.dark-mode header {
+  background: #23272f;
+  color: #fff;
+}
+
+body.dark-mode #habit-Input {
+  background: #23272f;
+  color: #e9efff;
+  border-color: #4f8cff;
+}
+
+body.dark-mode #addHabitBtn {
+  background: #3570e6;
+}
+
+body.dark-mode #habitList li {
+  background: #2c3440;
+  color: #e9efff;
+}
+
+body.dark-mode #habitList li.completed {
+  background: #3a4a3a;
+  color: #4f8cff;
+}
+
+body.dark-mode .delete-btn {
+  background: #d13c3c;
+}
+
+body.dark-mode footer {
+  background: #23272f;
+  color: #e9efff;
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.header-flex h1 {
+    margin-left: 0;
+}
